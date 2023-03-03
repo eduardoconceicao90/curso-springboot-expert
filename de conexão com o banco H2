@@ -1,0 +1,35 @@
+[33mcommit 6903cb79089d8df638d6efdb408601abac164cc0[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Eduardo Conceição <eduardosaconceicao@gmail.com>
+Date:   Mon Feb 27 23:21:35 2023 -0300
+
+    Criando annotations customizadas de configuração
+
+[33mcommit 74f15c18817da7bcd1d759ee0419e6c8c1320eca[m
+Author: Eduardo Conceição <eduardosaconceicao@gmail.com>
+Date:   Mon Feb 27 22:41:52 2023 -0300
+
+    Trabalhando com multiplos ambientes e profiles
+
+[33mcommit b6e5f739fd2bc092761f5356899dfd6acfc329b3[m
+Author: Eduardo Conceição <eduardosaconceicao@gmail.com>
+Date:   Mon Feb 27 22:30:17 2023 -0300
+
+    Configuração externalizada: Application Properties
+
+[33mcommit 5f87c352b5088bd627ed4aab26ea109445f64ce6[m
+Author: Eduardo Conceição <eduardosaconceicao@gmail.com>
+Date:   Mon Feb 27 22:07:05 2023 -0300
+
+    Injeção de Dependências
+
+[33mcommit ce086a01271297939ae197edc6442b6f4e0b10f5[m
+Author: Eduardo Conceição <eduardosaconceicao@gmail.com>
+Date:   Mon Feb 27 12:58:54 2023 -0300
+
+    Configurations e Beans
+
+[33mcommit 40fcdcf5a05ca751f4ea84964db380a3d8f7ea85[m
+Author: Eduardo Conceição <eduardosaconceicao@gmail.com>
+Date:   Fri Feb 24 16:08:10 2023 -0300
+
+    Primeiro commit
