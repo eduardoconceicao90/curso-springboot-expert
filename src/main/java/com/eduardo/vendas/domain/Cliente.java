@@ -19,7 +19,6 @@ public class Cliente {
     private Set<Pedido> pedidos;
 
     public Cliente() {
-
     }
 
     public Cliente(String nome) {
