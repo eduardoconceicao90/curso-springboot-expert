@@ -59,11 +59,20 @@ public class Pedido {
         this.total = total;
     }
 
-    public List<Pedido> getPedidos() {
-        return pedidos;
+    public List<ItemPedido> getItens() {
+        return itens;
     }
 
-    public void setPedidos(List<Pedido> pedidos) {
-        this.pedidos = pedidos;
+    public void setItens(List<ItemPedido> itens) {
+        this.itens = itens;
+    }
+
+    @Override
+    public String toString() {
+        return "Pedido{" +
+                "id=" + id +
+                ", dataPedido=" + dataPedido +
+                ", total=" + total +
+                '}';
     }
 }
