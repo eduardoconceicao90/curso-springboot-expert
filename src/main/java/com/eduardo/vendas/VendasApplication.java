@@ -26,31 +26,31 @@ public class VendasApplication {
 
 			List<Cliente> todosClientes = clienteRepository.obterTodos();
 			todosClientes.forEach(System.out::println);
-//
-//			System.out.println("Atualizando clientes");
-//			todosClientes.forEach(c -> {
-//				c.setNome(c.getNome() + " atualizado.");
-//				clienteRepository.atualizar(c);
-//			});
-//
-//			todosClientes = clienteRepository.obterTodos();
-//			todosClientes.forEach(System.out::println);
-//
-//			System.out.println("Buscando clientes");
-//			clienteRepository.buscarPorNome("Edu").forEach(System.out::println);
-//
-//			System.out.println("Deletando clientes");
-//			clienteRepository.obterTodos().forEach(c -> {
-//				clienteRepository.deletar(c);
-//			});
-//
-//			todosClientes = clienteRepository.obterTodos();
-//
-//			if(todosClientes.isEmpty()){
-//				System.out.println("Nenhum cliente encontrado.");
-//			} else {
-//				todosClientes.forEach(System.out::println);
-//			}
+
+			System.out.println("Atualizando clientes");
+			todosClientes.forEach(c -> {
+				c.setNome(c.getNome() + " atualizado.");
+				clienteRepository.atualizar(c);
+			});
+
+			todosClientes = clienteRepository.obterTodos();
+			todosClientes.forEach(System.out::println);
+
+			System.out.println("Buscando clientes");
+			clienteRepository.buscarPorNome("Edu").forEach(System.out::println);
+
+			System.out.println("Deletando clientes");
+			clienteRepository.obterTodos().forEach(c -> {
+				clienteRepository.deletar(c);
+			});
+
+			todosClientes = clienteRepository.obterTodos();
+
+			if(todosClientes.isEmpty()){
+				System.out.println("Nenhum cliente encontrado.");
+			} else {
+				todosClientes.forEach(System.out::println);
+			}
 		};
 	}
 
