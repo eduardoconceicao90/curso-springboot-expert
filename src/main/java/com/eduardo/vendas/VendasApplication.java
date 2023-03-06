@@ -32,9 +32,11 @@ public class VendasApplication {
 			p.setTotal(BigDecimal.valueOf(100));
 			pedidoRepository.save(p);
 
-			Cliente cliente = clienteRepository.findClienteFetchPedidos(c1.getId());
-			System.out.println(cliente);
-			System.out.println(cliente.getPedidos());
+//			Cliente cliente = clienteRepository.findClienteFetchPedidos(c1.getId());
+//			System.out.println(cliente);
+//			System.out.println(cliente.getPedidos());
+
+			pedidoRepository.findByCliente(c1).forEach(System.out::println);
 		};
 	}
 
