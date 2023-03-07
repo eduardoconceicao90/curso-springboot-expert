@@ -1,15 +1,20 @@
 package com.eduardo.vendas.controller;
 
-import org.springframework.stereotype.Controller;
+import com.eduardo.vendas.domain.Cliente;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/api/clientes")
 public class ClienteController {
 
-    @GetMapping(value = "/hello/{nome}")
+    @RequestMapping(
+            value = "/hello/{nome}",
+            method = RequestMethod.POST,
+            consumes = {"application/json", "application/xml"},
+            produces = {"application/json", "application/xml"}
+    )
     @ResponseBody
-    public String helloCliente(@PathVariable("nome") String nomeCliente){
+    public Cliente helloCliente(@PathVariable("nome") String nomeCliente, @ResponseBody Cliente cliente){
         return String.format("Hello %s", nomeCliente);
     }
 }
