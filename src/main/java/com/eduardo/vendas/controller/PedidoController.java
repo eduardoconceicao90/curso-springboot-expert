@@ -2,9 +2,11 @@ package com.eduardo.vendas.controller;
 
 import com.eduardo.vendas.domain.ItemPedido;
 import com.eduardo.vendas.domain.Pedido;
+import com.eduardo.vendas.domain.dto.AtualizacaoStatusPedidoDTO;
 import com.eduardo.vendas.domain.dto.InformacaoItemPedidoDTO;
 import com.eduardo.vendas.domain.dto.InformacoesPedidoDTO;
 import com.eduardo.vendas.domain.dto.PedidoDTO;
+import com.eduardo.vendas.domain.enums.StatusPedido;
 import com.eduardo.vendas.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,6 +40,13 @@ public class PedidoController {
                 .map(p -> converter(p))
                 .orElseThrow(() ->
                     new ResponseStatusException(HttpStatus.NOT_FOUND, "Pedido não encontrado."));
+    }
+
+    @PatchMapping(value = "/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updateStatus(@PathVariable Integer id, @RequestBody AtualizacaoStatusPedidoDTO dto){
+        String novoStatus = dto.getNovoStatus();
+        pedidoService.atualizaStatus(id, StatusPedido.valueOf(novoStatus));
     }
 
     private InformacoesPedidoDTO converter(Pedido pedido){

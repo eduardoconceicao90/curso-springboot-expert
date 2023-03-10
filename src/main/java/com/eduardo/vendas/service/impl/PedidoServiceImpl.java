@@ -13,6 +13,7 @@ import com.eduardo.vendas.repository.ItemPedidoRepository;
 import com.eduardo.vendas.repository.PedidoRepository;
 import com.eduardo.vendas.repository.ProdutoRepository;
 import com.eduardo.vendas.service.PedidoService;
+import com.eduardo.vendas.service.exception.PedidoNaoEncontradoException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -61,6 +62,16 @@ public class PedidoServiceImpl implements PedidoService {
     @Override
     public Optional<Pedido> obterPedidoCompleto(Integer id) {
         return pedidoRepository.findByIdFetchItens(id);
+    }
+
+    @Override
+    @Transactional
+    public void atualizaStatus(Integer id, StatusPedido statusPedido) {
+        pedidoRepository.findById(id)
+                .map(pedido ->{
+                pedido.setStatus(statusPedido);
+                return pedidoRepository.save(pedido);
+        }).orElseThrow(() -> new PedidoNaoEncontradoException());
     }
 
     private List<ItemPedido> converterItems(Pedido pedido, List<ItemPedidoDTO> itens) {
