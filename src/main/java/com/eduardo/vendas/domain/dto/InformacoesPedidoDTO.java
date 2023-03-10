@@ -1,6 +1,7 @@
 package com.eduardo.vendas.domain.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,10 +11,13 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class PedidoDTO {
+@Builder
+public class InformacoesPedidoDTO {
 
-    private Integer cliente;
+    private Integer id;
+    private String cpf;
+    private String nomeCliente;
     private BigDecimal total;
-    private List<ItemPedidoDTO> itens;
-
+    private String dataPedido;
+    private List<InformacaoItemPedidoDTO> items;
 }

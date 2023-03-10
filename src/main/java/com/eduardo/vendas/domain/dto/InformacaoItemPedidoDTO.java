@@ -1,19 +1,19 @@
 package com.eduardo.vendas.domain.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class PedidoDTO {
+@Builder
+public class InformacaoItemPedidoDTO {
 
-    private Integer cliente;
-    private BigDecimal total;
-    private List<ItemPedidoDTO> itens;
-
+    private String descricaoProduto;
+    private BigDecimal precoUnitario;
+    private Integer quantidade;
 }

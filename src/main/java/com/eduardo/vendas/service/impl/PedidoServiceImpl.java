@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -48,19 +49,24 @@ public class PedidoServiceImpl implements PedidoService {
         pedido.setDataPedido(LocalDate.now());
         pedido.setCliente(cliente);
 
-        List<ItemPedido> itemsPedidos = converterItems(pedido, pedidoDTO.getItems());
+        List<ItemPedido> itensPedidos = converterItems(pedido, pedidoDTO.getItens());
         pedidoRepository.save(pedido);
-        itemPedidoRepository.saveAll(itemsPedidos);
-        pedido.setItens(itemsPedidos);
+        itemPedidoRepository.saveAll(itensPedidos);
+        pedido.setItens(itensPedidos);
         return pedido;
     }
 
-    private List<ItemPedido> converterItems(Pedido pedido, List<ItemPedidoDTO> items) {
-        if(items.isEmpty()){
-            throw new RegraNegocioException("Não é possível realizar um pedido sem items!");
+    @Override
+    public Optional<Pedido> obterPedidoCompleto(Integer id) {
+        return pedidoRepository.findByIdFetchItens(id);
+    }
+
+    private List<ItemPedido> converterItems(Pedido pedido, List<ItemPedidoDTO> itens) {
+        if(itens.isEmpty()){
+            throw new RegraNegocioException("Não é possível realizar um pedido sem itens!");
         }
 
-        return items.stream()
+        return itens.stream()
                     .map(dto -> {
                         Integer idProduto = dto.getProduto();
                         Produto produto = produtoRepository.findById(idProduto)
