@@ -6,6 +6,7 @@ import com.eduardo.vendas.domain.Pedido;
 import com.eduardo.vendas.domain.Produto;
 import com.eduardo.vendas.domain.dto.ItemPedidoDTO;
 import com.eduardo.vendas.domain.dto.PedidoDTO;
+import com.eduardo.vendas.domain.enums.StatusPedido;
 import com.eduardo.vendas.service.exception.RegraNegocioException;
 import com.eduardo.vendas.repository.ClienteRepository;
 import com.eduardo.vendas.repository.ItemPedidoRepository;
@@ -48,6 +49,7 @@ public class PedidoServiceImpl implements PedidoService {
         pedido.setTotal(pedidoDTO.getTotal());
         pedido.setDataPedido(LocalDate.now());
         pedido.setCliente(cliente);
+        pedido.setStatus(StatusPedido.REALIZADO);
 
         List<ItemPedido> itensPedidos = converterItems(pedido, pedidoDTO.getItens());
         pedidoRepository.save(pedido);
