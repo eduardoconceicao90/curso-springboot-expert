@@ -6,7 +6,7 @@ import com.eduardo.vendas.domain.Pedido;
 import com.eduardo.vendas.domain.Produto;
 import com.eduardo.vendas.domain.dto.ItemPedidoDTO;
 import com.eduardo.vendas.domain.dto.PedidoDTO;
-import com.eduardo.vendas.exception.RegraNegocioException;
+import com.eduardo.vendas.service.exception.RegraNegocioException;
 import com.eduardo.vendas.repository.ClienteRepository;
 import com.eduardo.vendas.repository.ItemPedidoRepository;
 import com.eduardo.vendas.repository.PedidoRepository;

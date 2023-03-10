@@ -1,4 +1,4 @@
-package com.eduardo.vendas.exception;
+package com.eduardo.vendas.service.exception;
 
 public class RegraNegocioException extends RuntimeException {
 
