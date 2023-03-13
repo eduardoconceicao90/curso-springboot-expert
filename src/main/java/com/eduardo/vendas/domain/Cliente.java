@@ -8,6 +8,7 @@ import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.Objects;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -39,5 +40,4 @@ public class Cliente {
         this.id = id;
         this.nome = nome;
     }
-
 }
