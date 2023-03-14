@@ -1,6 +1,5 @@
 package com.eduardo.vendas.controller;
 
-import antlr.Token;
 import com.eduardo.vendas.domain.Usuario;
 import com.eduardo.vendas.domain.dto.CredenciaisDTO;
 import com.eduardo.vendas.domain.dto.TokenDTO;
@@ -45,13 +44,12 @@ public class UsuarioController {
                                         .login(credenciais.getLogin())
                                         .senha(credenciais.getSenha()).build();
 
-
            UserDetails usuarioAutenticado = usuarioService.autenticar(usuario);
            String token = jwtService.gerarToken(usuario);
            return new TokenDTO(usuario.getLogin(), token);
 
-        } catch (UsernameNotFoundException | SenhaInvalidaException e) {
-            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,e.getMessage());
+        } catch (UsernameNotFoundException | SenhaInvalidaException e){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, e.getMessage());
         }
     }
 }

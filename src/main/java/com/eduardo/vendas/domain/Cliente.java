@@ -8,7 +8,6 @@ import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import java.util.Objects;
 import java.util.Set;
 
 @NoArgsConstructor
