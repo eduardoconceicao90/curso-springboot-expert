@@ -44,7 +44,7 @@ public class SwaggerConfig {
     private Contact contact(){
         return new Contact(
                 "Eduardo Conceição",
-                "https://github.com/eduardoconceicao90?tab=repositories",
+                "https://github.com/eduardoconceicao90",
                 "eduardosaconceicao@gmail.com");
     }
 
